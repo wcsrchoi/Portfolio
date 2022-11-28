@@ -1,1 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  --primary-color: black;
+  --backgroud-main: white;
+  --background-secondery: white;
+  --secondery-color: #e6cc00;
+  --primary-shadow: grey;
+
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: let(--backgroud-main);
+}
