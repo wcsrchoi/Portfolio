@@ -1,0 +1,15 @@
+.projects {
+  display: flex;
+  flex-direction: column;
+  margin: 5px;
+  width: 400px;
+  height: auto;
+  background-color: white;
+  color: var(--primary-color);
+  border: 1px solid #ebecf0;
+
+  button {
+    background-color: #ebecf0;
+    color: #ebecf0;
+  }
+}

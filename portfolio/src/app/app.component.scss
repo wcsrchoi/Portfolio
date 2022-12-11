@@ -1,6 +1,7 @@
 .mainDiv {
   height: 100%;
   width: 100%;
+  background-color: var(--backgroud-main);
 
   p {
     color: var(--primary-color);
@@ -16,7 +17,7 @@
 
     .title {
       font-size: 56px;
-      margin-top: 35px;
+      margin-top: 0px;
       color: var(--primary-color);
       text-shadow: 1px 1px 10px var(--primary-shadow), 1px 1px 10px var(--primary-shadow);
     }
@@ -27,6 +28,7 @@
     flex-direction: column;
     height: 100%;
     width: 100%;
+    // background-color: var(--secondery-color);
 
     .socialDiv {
       display: flex;
@@ -42,12 +44,12 @@
         justify-content: space-evenly;
 
         img {
-          width: 67px;
+          width: 50px;
         }
 
         img:hover {
           // This is just an effect so you can delete this if you want
-          filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%)
+          filter: invert(27%) sepia(51%) hue-rotate(346deg) brightness(104%) contrast(97%)
         }
 
 
@@ -67,7 +69,11 @@
         div {
           display: flex;
           flex-direction: row;
-          justify-content: center
+          justify-content: center;
+
+          p {
+            font-size: large;
+          }
         }
 
       }
@@ -81,8 +87,17 @@
 
     }
 
+    .projectsDiv {
+      display: flex;
+      // flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      background-color: var(--backgroud-main);
+    }
+
 
   }
+
 
 
 }

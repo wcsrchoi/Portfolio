@@ -1,15 +1,18 @@
 <div class="mainDiv">
   <div class="topDiv">
-    <h1 class="title">Portfolio</h1>
+    <h1 class="title">Seongrim Choi</h1>
   </div>
 
   <div class="contentAreaDiv">
     <section class="socialDiv">
-      <p>My name is Seongrim Choi!</p>
       <div class="icon">
-        <span><a href="https://github.com/wcsrchoi"><img src="../assets/github.png" alt="github icon"></a></span>
+        <span><a href="https://github.com/wcsrchoi"><img src="../assets/github.svg" alt="github icon"></a></span>
         <span><a href="https://www.facebook.com/wcsrchoi"><img src="../assets/facebook.png"
               alt="facebook icon"></a></span>
+        <span><a href="https://www.linkedin.com/in/seongrim-choi-ba8b78171/"><img src="../assets/linkedin.png"
+              alt="LinkeIn icon"></a></span>
+        <span><a href="https://www.instagram.com/wcsrchoi/"><img src="../assets/insta.webp"
+              alt="LinkeIn icon"></a></span>
       </div>
     </section>
 
@@ -17,26 +20,37 @@
       <div class="summeryDiv">
         <hr>
         <div>
-          <p style="font-size:large; ;">Summary</p>
+          <p>Summary</p>
         </div>
-        <p>This is my summry! Add yours here.</p>
+        <div *ngFor="let summary of summary | async">
+          {{summary.summary}}
+        </div>
       </div>
 
       <div class="resumeDiv">
         <hr>
         <div>
-          <p style="font-size:large">Resume</p>
+          <p>Resume</p>
         </div>
-        <p>link to resume!</p>
+        <p><a
+            href="https://docs.google.com/document/d/1i506Ftka9kG5Z0xN1FY1B8EZ4ni4EhiYU6iawH6CCY4/edit?usp=sharing">Click
+            for resume!</a></p>
       </div>
 
       <div class="projectDiv">
         <hr>
         <div>
-          <p style="font-size:large">Projects</p>
+          <p>Projects</p>
         </div>
       </div>
 
+      <div class="projectsDiv">
+        <div *ngFor="let plist of items | async">
+          <app-project-list title={{plist.name}} subtitle={{plist.subtitle}} content={{plist.content}}
+            img={{plist.image}} link={{plist.link}}>
+          </app-project-list>
+        </div>
+      </div>
 
     </section>
   </div>

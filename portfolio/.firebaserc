@@ -1,0 +1,42 @@
+{
+  "targets": {
+    "chat-app-cbc4c": {
+      "hosting": {
+        "hw10": [
+          "chat-app-cbc4c"
+        ]
+      }
+    },
+    "chatapp-adc63": {
+      "hosting": {
+        "hw10": [
+          "chatapp-adc63"
+        ]
+      }
+    },
+    "chat-app-8f9ea": {
+      "hosting": {
+        "hw10": [
+          "chat-app-8f9ea"
+        ]
+      }
+    },
+    "chat-app-wcsrc": {
+      "hosting": {
+        "hw10": [
+          "chat-app-wcsrc"
+        ]
+      }
+    },
+    "portfolio-1568a": {
+      "hosting": {
+        "hw10": [
+          "portfolio-1568a"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "portfolio-1568a"
+  }
+}
