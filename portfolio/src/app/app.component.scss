@@ -1,7 +1,6 @@
 .mainDiv {
   height: 100%;
   width: 100%;
-  // background-color: var(--backgroud-main);
 
   .buttonLink {
     color: white;
@@ -14,12 +13,11 @@
     height: 82.5px;
     width: 100%;
     justify-content: center;
-    box-shadow: 0 8px 6px -6px var(--secondery-color);
     background-color: #F9F7F7;
 
     .title {
-      font-size: 50px;
-      margin-top: 0px;
+      font-size: 45px;
+      margin-top: 10px;
       color: var(--font-color);
       text-shadow: 1px 1px 10px var(--primary-shadow), 1px 1px 10px var(--primary-shadow);
     }
@@ -90,22 +88,17 @@
 
           p {
             font-size: large;
+            font-weight: bold;
             color: white;
-            text-shadow: rgb(128, 128, 128) 1px 0 10px;
           }
         }
       }
     }
 
-    hr {
-      background-color: var(--secondery-color);
-      height: 1px;
-      border: none;
-      width: 100%;
-    }
-
     .projectDiv {
       background-color: #DCD6F7;
+
+      text-shadow: rgb(0, 0, 0) 1px 0 10px;
     }
 
     .projectsDiv {
