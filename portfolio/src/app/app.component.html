@@ -5,6 +5,7 @@
 
   <div class="contentAreaDiv">
     <section class="socialDiv">
+      <br>
       <div class="icon">
         <span><a href="https://github.com/wcsrchoi"><img src="../assets/github.svg" alt="github icon"></a></span>
         <span><a href="https://www.facebook.com/wcsrchoi"><img src="../assets/facebook.png"
@@ -14,31 +15,32 @@
         <span><a href="https://www.instagram.com/wcsrchoi/"><img src="../assets/insta.webp"
               alt="LinkeIn icon"></a></span>
       </div>
+      <br>
     </section>
 
     <section class="mainContentDiv">
-      <div class="summeryDiv">
-        <hr>
+      <div class="summaryDiv">
         <div>
           <p>Summary</p>
         </div>
         <div *ngFor="let summary of summary | async">
           {{summary.summary}}
         </div>
+        <br>
       </div>
 
       <div class="resumeDiv">
-        <hr>
         <div>
           <p>Resume</p>
         </div>
-        <p><a
-            href="https://docs.google.com/document/d/1i506Ftka9kG5Z0xN1FY1B8EZ4ni4EhiYU6iawH6CCY4/edit?usp=sharing">Click
-            for resume!</a></p>
+        <div class="buttonLink">
+          <button class="button-48" role="button"
+            onclick="location.href='https://docs.google.com/document/d/1i506Ftka9kG5Z0xN1FY1B8EZ4ni4EhiYU6iawH6CCY4/edit?usp=sharing';"><span
+              class="text">Click for resume!</span></button>
+        </div>
       </div>
 
       <div class="projectDiv">
-        <hr>
         <div>
           <p>Projects</p>
         </div>
@@ -51,6 +53,8 @@
           </app-project-list>
         </div>
       </div>
+      <br>
+      <br>
 
     </section>
   </div>
