@@ -1,14 +1,10 @@
-.mainDiv {
+.main {
   height: 100%;
   width: 100%;
 
-  .buttonLink {
-    color: white;
-    text-align: center;
-    justify-content: center;
-  }
 
-  .topDiv {
+
+  .header {
     display: flex;
     height: 82.5px;
     width: 100%;
@@ -18,25 +14,24 @@
     .title {
       font-size: 45px;
       margin-top: 10px;
-      color: var(--font-color);
-      text-shadow: 1px 1px 10px var(--primary-shadow), 1px 1px 10px var(--primary-shadow);
+      color: white;
+      text-shadow: black 1px 1px 10px
     }
   }
 
-  .contentAreaDiv {
+  .body {
     display: flex;
     flex-direction: column;
     height: 100%;
     width: 100%;
     background-color: #DBE2EF;
 
-    .socialDiv {
+    .sns {
       display: flex;
       flex-direction: column;
       justify-content: center;
       text-align: center;
       margin-top: 10px;
-      // background-color: #FF8FB1;
 
       .icon {
         display: flex;
@@ -54,31 +49,59 @@
       }
     }
 
-    .mainContentDiv {
+    .bodyMain {
       background-color: #DCD6F7;
       display: flex;
       flex-direction: column;
       width: 100%;
       height: auto;
 
-      .summaryDiv {
+      .summary {
         background-color: #3F72AF;
+        flex-wrap: wrap;
 
-        div {
-          p {
-            font-size: 20px;
-            color: white;
-            text-shadow: rgb(128, 128, 128) 1px 0 10px;
+        @media only screen and (max-width: 1000px) {
+          .summaryItems {
+            flex-direction: column;
           }
+        }
+
+        .summaryItems {
+
+          .pImage {
+            img {
+              width: 300px;
+              height: 300px;
+              margin-left: 1vmax;
+              border-radius: 50%;
+            }
+          }
+
+          .summaryStr {
+            margin-left: 1vmax;
+            margin-right: 1vmax;
+            font-size: 20px;
+          }
+
+
+        }
+
+
+
+
+      }
+
+      .resume {
+        background-color: #112D4E;
+
+        .buttonLink {
+          color: white;
+          text-align: center;
+          justify-content: center;
         }
       }
 
-      .resumeDiv {
-        background-color: #112D4E;
-      }
-
       div {
-        color: white;
 
         div {
           color: white;
@@ -90,24 +113,26 @@
             font-size: large;
             font-weight: bold;
             color: white;
+            text-shadow: black 1px 1px 10px;
           }
         }
       }
     }
 
-    .projectDiv {
+    .project {
       background-color: #DCD6F7;
 
-      text-shadow: rgb(0, 0, 0) 1px 0 10px;
+
+      .projectList {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        background-color: #DCD6F7;
+      }
     }
 
-    .projectsDiv {
-      display: flex;
-      // flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: center;
-      background-color: #DCD6F7;
-    }
+
   }
 }
 

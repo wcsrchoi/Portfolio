@@ -5,7 +5,8 @@ import { query, orderBy, collection } from '@firebase/firestore';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 
 
-// interface variable that's in database
+// interface variables that's in database
+// This interface is used for Porject List.
 export interface FirestoreRec {
   name: string,
   subtitle: string,
@@ -16,9 +17,16 @@ export interface FirestoreRec {
   summary: string
 }
 
+// This interface is used for Summary/Intoduction.
 export interface Summary {
   summary: string
 }
+
+// This interface is used for Profile Image.
+export interface profileImage {
+  image: string
+}
+
 
 @Component({
   selector: 'app-root',
@@ -28,53 +36,24 @@ export interface Summary {
 
 export class AppComponent {
   title = 'portfolio';
-  name: string = "";
-  subtitle: string = "";
-  content: string = "";
-  image: string = "";
-  public items: Observable<FirestoreRec[]>;
-  public summary: Observable<FirestoreRec[]>;
+  items: Observable<FirestoreRec[]>;
+  summary: Observable<Summary[]>;
+  profileImage: Observable<profileImage[]>;
+
 
   constructor(public firestore: Firestore) {
 
     // Using Web Version 9
-    // get queries from the database ordered by time and loading the payload of data into itmes
+    // get queries of project-lists from the database ordered by id and loading the payload of data into itmes.
     const plist = query(collection(firestore, "portfolio"), orderBy("id"));
     this.items = collectionData(plist) as Observable<FirestoreRec[]>;
 
-    const summary = query(collection(firestore, "summary"), orderBy("summary"));
-    this.summary = collectionData(summary) as Observable<FirestoreRec[]>;
+    // get queries of summary from the database and loading the payload of data into summary.
+    const summary = query(collection(firestore, "summary"));
+    this.summary = collectionData(summary) as Observable<Summary[]>;
 
-
-
-    // getting username and color from the local storage
-    // const userNameLS = localStorage.getItem("userName");
-    // this.userName = userNameLS != null ? userNameLS : "";
-    // const colorLS = localStorage.getItem("color");
-    // this.color = colorLS != null ? colorLS : "";
+    // get queries of profile image from the database and loading the payload of data into profileImage.
+    const pImage = query(collection(firestore, "profileImage"));
+    this.profileImage = collectionData(pImage) as Observable<profileImage[]>;
   }
-
-
-
-  // write the below fields into the database
-  // WriteDB() {
-  //   addDoc(collection(this.firestore, 'cs336-chat'), {
-  //     userName: this.userName,
-  //     message: this.message,
-  //     timestamp: new Date(),
-  //     color: this.color
-  //   })
-  //   this.message = " "; // empty the message text box after wrting to the database
-  // }
-
-  // // writing username into the local storage
-  // writeUserNameLS() {
-  //   localStorage.setItem('userName', this.userName,);
-  // }
-
-  // // writing color into the local storage
-  // writeColorLS() {
-  //   localStorage.setItem('color', this.color);
-  // }
-
 }

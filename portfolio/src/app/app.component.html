@@ -1,11 +1,70 @@
-<div class="mainDiv">
-  <div class="topDiv">
+<div class="main">
+
+  <!-- This is the header section which my names goes. -->
+  <div class="header">
     <h1 class="title">Seongrim Choi</h1>
   </div>
 
-  <div class="contentAreaDiv">
-    <section class="socialDiv">
+  <!-- This is the whole body section which includes Main Body, SNS sections. -->
+  <section class="body">
+
+    <!-- This is the Main Body section which includes Summary, Resume, Project List sections. -->
+    <section class="bodyMain">
+
+      <!-- This is the Summary section. -->
+      <div class="summary">
+        <div>
+          <p>About Me</p>
+        </div>
+        <div class="summaryItems">
+          <!-- The profile image is fetched from the firestore. -->
+          <div class="pImage" *ngFor="let pImage of profileImage | async">
+            <img src="{{pImage.image}}" alt="Profile Picture">
+          </div>
+          <!-- The intoduction is fetched from the firestore. -->
+          <div class="summaryStr" *ngFor="let summary of summary | async">
+            {{summary.summary}}
+          </div>
+        </div>
+        <br>
+      </div>
+
+      <!-- This is the Resume section. -->
+      <div class="resume">
+        <div>
+          <p>Resume</p>
+        </div>
+        <div class="buttonLink">
+          <!-- When the button is clicked, it leads to the resume that is saved externally. -->
+          <!-- This button is from 'https://getcssscan.com/css-buttons-examples'. -->
+          <button class="button-48" role="button"
+            onclick="location.href='https://docs.google.com/document/d/1i506Ftka9kG5Z0xN1FY1B8EZ4ni4EhiYU6iawH6CCY4/edit?usp=sharing';"><span
+              class="text">Click for resume!</span></button>
+        </div>
+      </div>
+
+      <!-- This is the Project List sction. -->
+      <div class="project">
+        <div>
+          <p>Projects</p>
+        </div>
+        <div class="projectList">
+          <!-- Project List details are fetched from the database and are combined in custom component, 'project-list'. -->
+          <div *ngFor="let plist of items | async">
+            <app-project-list title={{plist.name}} subtitle={{plist.subtitle}} content={{plist.content}}
+              img={{plist.image}} link={{plist.link}}>
+            </app-project-list>
+          </div>
+        </div>
+      </div>
       <br>
+      <br>
+    </section>
+
+    <!-- This is the SNS section. -->
+    <section class="sns">
+      <br>
+      <!-- When icon is clicked, the page that is linked to the icon will be loaded. -->
       <div class="icon">
         <span><a href="https://github.com/wcsrchoi"><img src="../assets/github.svg" alt="github icon"></a></span>
         <span><a href="https://www.facebook.com/wcsrchoi"><img src="../assets/facebook.png"
@@ -18,44 +77,5 @@
       <br>
     </section>
 
-    <section class="mainContentDiv">
-      <div class="summaryDiv">
-        <div>
-          <p>Summary</p>
-        </div>
-        <div *ngFor="let summary of summary | async">
-          {{summary.summary}}
-        </div>
-        <br>
-      </div>
-
-      <div class="resumeDiv">
-        <div>
-          <p>Resume</p>
-        </div>
-        <div class="buttonLink">
-          <button class="button-48" role="button"
-            onclick="location.href='https://docs.google.com/document/d/1i506Ftka9kG5Z0xN1FY1B8EZ4ni4EhiYU6iawH6CCY4/edit?usp=sharing';"><span
-              class="text">Click for resume!</span></button>
-        </div>
-      </div>
-
-      <div class="projectDiv">
-        <div>
-          <p>Projects</p>
-        </div>
-      </div>
-
-      <div class="projectsDiv">
-        <div *ngFor="let plist of items | async">
-          <app-project-list title={{plist.name}} subtitle={{plist.subtitle}} content={{plist.content}}
-            img={{plist.image}} link={{plist.link}}>
-          </app-project-list>
-        </div>
-      </div>
-      <br>
-      <br>
-
-    </section>
-  </div>
+  </section>
 </div>
