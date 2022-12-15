@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Firestore, collectionData, addDoc, Timestamp, setDoc, doc } from '@angular/fire/firestore';
+import { Firestore, collectionData } from '@angular/fire/firestore';
 import { query, orderBy, collection } from '@firebase/firestore';
-import { AngularFirestore } from '@angular/fire/compat/firestore';
 
 
 // interface variables that's in database

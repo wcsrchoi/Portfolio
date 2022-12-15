@@ -5,7 +5,11 @@
   width: 300px;
   background-color: white;
   color: #181818;
-  border: 1px solid white;
+
+  // Make sure to have space between the project title and the image.
+  mat-card-header {
+    justify-content: space-between;
+  }
 
   button {
     background-color: #ebecf0;

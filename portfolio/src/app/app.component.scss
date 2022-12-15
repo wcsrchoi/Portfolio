@@ -1,32 +1,104 @@
 .main {
-  height: 100%;
-  width: 100%;
-
-
 
   .header {
-    display: flex;
-    height: 82.5px;
-    width: 100%;
-    justify-content: center;
+    align-content: center;
     background-color: #F9F7F7;
+    text-align: center;
 
     .title {
       font-size: 45px;
       margin-top: 10px;
       color: white;
-      text-shadow: black 1px 1px 10px
+      text-shadow: black 1px 1px 11px
     }
   }
 
   .body {
     display: flex;
     flex-direction: column;
-    height: 100%;
-    width: 100%;
     background-color: #DBE2EF;
 
-    .sns {
+    .bodyMain {
+      background-color: #DCD6F7;
+      display: flex;
+      flex-direction: column;
+
+      .summary {
+        background-color: #3F72AF;
+
+        .summaryItems {
+          display: flex;
+          flex-direction: row;
+
+          .pImage {
+            text-align: center;
+
+            img {
+              width: 250px;
+              height: 250px;
+              margin-left: 1vmax;
+              border-radius: 50%;
+            }
+          }
+
+          .summaryStr {
+            margin-left: 1vmax;
+            margin-right: 1vmax;
+            font-size: 17px;
+            color: white;
+          }
+        }
+
+        // When the width of the screen becomes less than 850px,
+        // flex-direction is changed from row to column,
+        // making the profile picture go top of the summary.
+        @media only screen and (max-width: 850px) {
+          .summaryItems {
+            flex-direction: column;
+          }
+        }
+      }
+
+      .resume {
+        background-color: #112D4E;
+
+        .buttonLink {
+          color: white;
+          text-align: center;
+          justify-content: center;
+        }
+      }
+
+      div {
+        .sectionTitle {
+          justify-content: center;
+          color: white;
+          display: flex;
+          flex-direction: row;
+
+          p {
+            font-size: large;
+            font-weight: bold;
+            color: white;
+            text-shadow: black 1px 1px 10px;
+          }
+        }
+      }
+
+      .project {
+        background-color: #DCD6F7;
+
+        .projectList {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap; // Make each project list wrap on to multiple line
+          background-color: #DCD6F7;
+          justify-content: center;
+        }
+      }
+    }
+
+    .footer {
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -43,100 +115,17 @@
         }
 
         img:hover {
-          // This is just an effect so you can delete this if you want
-          filter: invert(27%) sepia(51%) hue-rotate(346deg) brightness(104%) contrast(97%)
+          opacity: 0.3;
         }
       }
     }
-
-    .bodyMain {
-      background-color: #DCD6F7;
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-      height: auto;
-
-      .summary {
-        background-color: #3F72AF;
-        flex-wrap: wrap;
-
-        @media only screen and (max-width: 1000px) {
-          .summaryItems {
-            flex-direction: column;
-          }
-        }
-
-        .summaryItems {
-
-          .pImage {
-            img {
-              width: 300px;
-              height: 300px;
-              margin-left: 1vmax;
-              border-radius: 50%;
-            }
-          }
-
-          .summaryStr {
-            margin-left: 1vmax;
-            margin-right: 1vmax;
-            font-size: 20px;
-          }
-
-
-        }
-
-
-
-
-      }
-
-      .resume {
-        background-color: #112D4E;
-
-        .buttonLink {
-          color: white;
-          text-align: center;
-          justify-content: center;
-        }
-      }
-
-      div {
-
-        div {
-          color: white;
-          display: flex;
-          flex-direction: row;
-          justify-content: center;
-
-          p {
-            font-size: large;
-            font-weight: bold;
-            color: white;
-            text-shadow: black 1px 1px 10px;
-          }
-        }
-      }
-    }
-
-    .project {
-      background-color: #DCD6F7;
-
-
-      .projectList {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        background-color: #DCD6F7;
-      }
-    }
-
-
   }
 }
 
+// ------------------------------------------------------------------------------------------------------------
+// below this line is the section for the code taken from the internet.
 
+// the Resume button effect
 /* https://getcssscan.com/css-buttons-examples */
 .button-48 {
   appearance: none;

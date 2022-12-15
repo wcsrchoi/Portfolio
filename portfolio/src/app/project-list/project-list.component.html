@@ -1,13 +1,18 @@
 <mat-card class="projects">
-  <mat-card-header style="justify-content:space-between;">
+  <mat-card-header>
     <mat-card-title-group>
+      <!-- Title of each project -->
       <mat-card-title style="font-size: 20px;">{{title}}</mat-card-title>
+      <!-- Subtitle of each project -->
       <mat-card-subtitle style="color: grey">{{subtitle}}</mat-card-subtitle>
     </mat-card-title-group>
+    <!-- Image of the project -->
     <img mat-card-sm-image src={{img}}>
   </mat-card-header>
+  <!-- Content/Body of the project -->
   <mat-card-content>
     {{content}}
   </mat-card-content>
+  <!-- Link that leads to each project's source code -->
   <button mat-raised-button><a href={{link}}>To Source Code</a></button>
 </mat-card>

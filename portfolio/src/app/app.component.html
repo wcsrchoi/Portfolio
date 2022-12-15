@@ -5,7 +5,7 @@
     <h1 class="title">Seongrim Choi</h1>
   </div>
 
-  <!-- This is the whole body section which includes Main Body, SNS sections. -->
+  <!-- This is the whole body section which includes Main Body, footer sections. -->
   <section class="body">
 
     <!-- This is the Main Body section which includes Summary, Resume, Project List sections. -->
@@ -13,7 +13,7 @@
 
       <!-- This is the Summary section. -->
       <div class="summary">
-        <div>
+        <div class="sectionTitle">
           <p>About Me</p>
         </div>
         <div class="summaryItems">
@@ -31,7 +31,7 @@
 
       <!-- This is the Resume section. -->
       <div class="resume">
-        <div>
+        <div class="sectionTitle">
           <p>Resume</p>
         </div>
         <div class="buttonLink">
@@ -43,13 +43,13 @@
         </div>
       </div>
 
-      <!-- This is the Project List sction. -->
+      <!-- This is the Project List section. -->
       <div class="project">
-        <div>
+        <div class="sectionTitle">
           <p>Projects</p>
         </div>
         <div class="projectList">
-          <!-- Project List details are fetched from the database and are combined in custom component, 'project-list'. -->
+          <!-- Project List details are fetched from the database and are passed to the custom component, 'project-list'. -->
           <div *ngFor="let plist of items | async">
             <app-project-list title={{plist.name}} subtitle={{plist.subtitle}} content={{plist.content}}
               img={{plist.image}} link={{plist.link}}>
@@ -61,18 +61,16 @@
       <br>
     </section>
 
-    <!-- This is the SNS section. -->
-    <section class="sns">
+    <!-- This is the footer section. -->
+    <section class="footer">
       <br>
       <!-- When icon is clicked, the page that is linked to the icon will be loaded. -->
       <div class="icon">
-        <span><a href="https://github.com/wcsrchoi"><img src="../assets/github.svg" alt="github icon"></a></span>
-        <span><a href="https://www.facebook.com/wcsrchoi"><img src="../assets/facebook.png"
-              alt="facebook icon"></a></span>
+        <span><a href="https://github.com/wcsrchoi"><img src="../assets/github.svg" alt="github"></a></span>
+        <span><a href="https://www.facebook.com/wcsrchoi"><img src="../assets/facebook.png" alt="facebook"></a></span>
         <span><a href="https://www.linkedin.com/in/seongrim-choi-ba8b78171/"><img src="../assets/linkedin.png"
-              alt="LinkeIn icon"></a></span>
-        <span><a href="https://www.instagram.com/wcsrchoi/"><img src="../assets/insta.webp"
-              alt="LinkeIn icon"></a></span>
+              alt="LinkedIn"></a></span>
+        <span><a href="https://www.instagram.com/wcsrchoi/"><img src="../assets/insta.webp" alt="instagram"></a></span>
       </div>
       <br>
     </section>
