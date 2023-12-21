@@ -1,3 +1,5 @@
-# cs336-Final-Project
+# Portfolio URL
 
 https://portfolio-1568a.web.app/
+
+Utilized with Angular
